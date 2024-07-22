@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الة حاسبة</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <style>
+      * {
+        font-weight: bold;
+        font-family: "Poppins";
+      }
+      .container {
+        background-color: #0d1137;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+      }
+      .clculator {
+        box-shadow: rgb(149 25 181 / 56%) 0px 40px 147px 0px;
+        width: 300px;
+        background-color: aliceblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+      }
+      .dispaly {
+        width: 95%;
+        height: 80px;
+        border-radius: 8px;
+        margin: 8px;
+        color: #0d1137;
+        text-align: end;
+        padding: 23px 11px;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: "Poppins";
+      }
+      .circles .top {
+        display: grid;
+        grid-template-columns: 60px 60px 60px 60px;
+        grid-gap: 15px;
+      }
+      .botoon {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+      }
+      .circle {
+        height: 10px;
+        /* display: inline; */
+        margin: 10px;
+        border-radius: 50%;
+        /* position: absolute; */
+        height: 50px;
+        width: 50px;
+        background: #0d1137;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 23px;
+        cursor: pointer;
+        box-shadow: rgb(0 0 0 / 56%) 5px 5px 18px;
+        transition: 0.1s;
+      }
+      .circle:hover {
+        background: white;
+        color: #0d1137;
+      }
+      .colum-four .circle {
+        background-color: #eac020;
+      }
+      .eqwal {
+        background: #eac020;
+      }
+      .colum-four .circle:hover,
+      .eqwal:hover {
+        background-color: white;
+        color: #eac020;
+      }
+    </style>
+
+    <div class="container">
+      <div class="clculator">
+        <input type="text" class="dispaly" />
+        <div class="circles">
+          <div class="top">
+            <div class="colum-one">
+              <div class="circle" onclick="clearDispay()">C</div>
+              <div class="circle" onclick="appendTodispay(`7`)">7</div>
+              <div class="circle" onclick="appendTodispay(`4`)">4</div>
+              <div class="circle" onclick="appendTodispay(`1`)">1</div>
+            </div>
+            <div class="colum-two">
+              <div class="circle">Del</div>
+              <div class="circle" onclick="appendTodispay(`8`)">8</div>
+              <div class="circle" onclick="appendTodispay(`5`)">5</div>
+              <div class="circle" onclick="appendTodispay(`2`)">2</div>
+            </div>
+            <div class="colum-three">
+              <div class="circle" onclick="appendTodispay(`%`)">%</div>
+              <div class="circle" onclick="appendTodispay(`9`)">9</div>
+              <div class="circle" onclick="appendTodispay(`6`)">6</div>
+              <div class="circle" onclick="appendTodispay(`3`)">3</div>
+            </div>
+            <div class="colum-four">
+              <div class="circle" onclick="appendTodispay(`/`)">/</div>
+              <div class="circle" onclick="appendTodispay(`*`)">×</div>
+              <div class="circle" onclick="appendTodispay(`+`)">+</div>
+              <div class="circle" onclick="appendTodispay(`-`)">-</div>
+            </div>
+          </div>
+          <div class="botoon">
+            <div
+              class="circle"
+              onclick="appendTodispay(`0`)"
+              style="width: 120px; border-radius: 30px"
+            >
+              0
+            </div>
+            <div class="circle" onclick="appendTodispay(`.`)">.</div>
+            <div class="circle eqwal" onclick="calcultae()">=</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
